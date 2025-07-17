@@ -1,6 +1,7 @@
 'use client'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
+import Image from 'next/image'
 import './style.css'
 
 export default function UserDashboard() {
@@ -77,7 +78,6 @@ export default function UserDashboard() {
               className="search-input"
             />
             <svg className="search-icon" viewBox="0 0 24 24">
-              <path d=""/>
             </svg>
           </div>
 
@@ -110,9 +110,6 @@ export default function UserDashboard() {
           </div>
         ) : filteredBlogs.length === 0 ? (
           <div className="no-blogs">
-            <svg viewBox="0 0 24 24" className="no-blogs-icon">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
-            </svg>
             <p>No blog posts found matching your criteria.</p>
           </div>
         ) : (
@@ -121,11 +118,18 @@ export default function UserDashboard() {
               <div key={blog.id} className={`user-blog-card ${blog.featured ? 'featured' : ''}`}>
                 {blog.featured && <div className="featured-badge">Featured</div>}
                 <div className="blog-image-container">
-                  <img 
-                    src={blog.image} 
-                    alt={blog.title}
-                    className="blog-image"
-                  />
+                 <div className="blog-image-container">
+  <Image 
+    src={blog.image} 
+    alt={blog.title}
+    className="blog-image"
+    width={600}
+    height={400}
+    objectFit="cover"
+    unoptimized
+  />
+</div>
+
                 </div>
                 <div className="blog-content">
                   <div className="blog-meta">

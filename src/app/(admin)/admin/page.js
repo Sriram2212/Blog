@@ -1,6 +1,7 @@
 'use client'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
+import Image from 'next/image'
 import './style.css'
 
 export default function AdminDashboard() {
@@ -21,7 +22,7 @@ export default function AdminDashboard() {
   useEffect(() => {
     const role = localStorage.getItem('role')
     const isAuthenticated = localStorage.getItem('isAuthenticated')
-    
+
     if (role !== 'admin' || !isAuthenticated) {
       router.push('/login')
       return
@@ -79,7 +80,7 @@ export default function AdminDashboard() {
       }
       updatedBlogs = [...blogs, newBlog]
     }
-    
+
     setBlogs(updatedBlogs)
     setFormData({
       title: '',
@@ -124,7 +125,7 @@ export default function AdminDashboard() {
       <main className="main">
         <section className="form-section">
           <h2>{editingId !== null ? 'Edit Blog' : 'Add New Blog'}</h2>
-          
+
           <div className="form-group">
             <label>Title*</label>
             <input
@@ -253,7 +254,16 @@ export default function AdminDashboard() {
               {blogs.map(blog => (
                 <div key={blog.id} className={`card ${blog.featured ? 'featured' : ''}`}>
                   {blog.featured && <span className="featured-badge">Featured</span>}
-                  <img src={blog.image} alt={blog.title} className="card-image" />
+                  <div className="image-wrapper">
+                    <Image
+                      src={blog.image}
+                      alt={blog.title}
+                      width={300}
+                      height={200}
+                      className="card-image"
+                      unoptimized
+                    />
+                  </div>
                   <div className="card-content">
                     <h3>{blog.title}</h3>
                     <p className="card-description">{blog.description}</p>

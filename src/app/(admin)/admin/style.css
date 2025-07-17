@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Times New Roman';
 }
 
 body {
@@ -62,3 +62,153 @@ body {
 .edit-btn:hover {
   background-color: #219150;
 }
+
+.main {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.form-section {
+  background-color: #1e1e1e;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 15px rgba(255, 255, 255, 0.05);
+  margin-bottom: 2rem;
+}
+
+.form-section h2 {
+  margin-bottom: 1.5rem;
+  color: #f0f0f0;
+  font-size: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #ccc;
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #333;
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: #2c2c2c;
+  color: #e0e0e0;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-group input {
+  margin-right: 0.5rem;
+}
+
+.blog-list-section h2 {
+  margin-bottom: 1.5rem;
+  color: #f0f0f0;
+  font-size: 1.5rem;
+}
+
+.no-blogs {
+  text-align: center;
+  padding: 2rem;
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  color: #999;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.08);
+}
+
+.card.featured {
+  border-left: 4px solid #f39c12;
+}
+
+.featured-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #f39c12;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 1.5rem;
+}
+
+.card-content h3 {
+  margin-bottom: 0.75rem;
+  color: #f8f8f8;
+}
+
+.card-description {
+  color: #aaa;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.8rem;
+}
+
+.card-meta span {
+  padding: 0.25rem 0.5rem;
+  background-color: #2a2a2a;
+  border-radius: 4px;
+  color: #aaa;
+}
+
+.card-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
